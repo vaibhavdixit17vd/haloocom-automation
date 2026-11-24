@@ -1,0 +1,586 @@
+2026-10-16 21:09:54,575 WARNING No state file; first run starting from 1970-01-01T00:00:00+00:00
+2026-10-16 21:09:54,576 INFO Run started. watermark=1970-01-01 00:00:00+00:00, querying since=1969-12-31T23:50:00+00:00
+2026-10-16 21:09:54,592 WARNING Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)")': /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500
+2026-10-16 21:09:58,594 WARNING Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)")': /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500
+2026-10-16 21:10:06,598 WARNING Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)")': /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500
+2026-10-16 21:10:22,603 WARNING Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)")': /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500
+2026-10-16 21:10:22,612 ERROR Run failed
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connection.py", line 246, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  [Previous line repeated 1 more time]
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='haloocom.internal', port=443): Max retries exceeded with url: /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500 (Caused by NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 299, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 236, in run
+    leads = fetch_leads(build_session(), since)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 164, in fetch_leads
+    resp = session.get(
+        url,
+    ...<6 lines>...
+        timeout=60,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='haloocom.internal', port=443): Max retries exceeded with url: /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500 (Caused by NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)"))
+2026-10-16 21:10:43,710 ERROR Could not send failure alert
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connection.py", line 246, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 886, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  [Previous line repeated 1 more time]
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\urllib3\util\retry.py", line 555, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='haloocom.internal', port=443): Max retries exceeded with url: /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500 (Caused by NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 299, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 236, in run
+    leads = fetch_leads(build_session(), since)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 164, in fetch_leads
+    resp = session.get(
+        url,
+    ...<6 lines>...
+        timeout=60,
+    )
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='haloocom.internal', port=443): Max retries exceeded with url: /api/leads?created_after=1969-12-31T23%3A50%3A00%2B00%3A00&sort=created_at&page=1&page_size=500 (Caused by NameResolutionError("HTTPSConnection(host='haloocom.internal', port=443): Failed to resolve 'haloocom.internal' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 305, in main
+    send_mail("Lead extract FAILED", f"The Haloocom extract failed:\n\n{exc}", [OWNER_EMAIL])
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 202, in send_mail
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 263, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 320, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 868, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 853, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-10-16 21:14:06,329 WARNING No state file found; first run starting from 2026-10-15
+2026-10-16 21:14:06,330 INFO Starting run. Date query range: 2026-10-14 to 2026-10-16
+2026-10-16 21:14:06,330 INFO Requesting report from https://zdpm.haloocom.in/haloocomConnect5/prospect_detail_report.php with params: {'start_date': '2026-10-14', 'end_date': '2026-10-16'}
+2026-10-16 21:14:07,630 ERROR Run failed
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\models.py", line 1116, in json
+    return complexjson.loads(self.text, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 131, in fetch_prospect_report
+    data = resp.json()
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\models.py", line 1120, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 241, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 186, in run
+    leads = fetch_prospect_report(build_session(), start_date_str, end_date_str)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 142, in fetch_prospect_report
+    raise ValueError(f"Failed to parse API response as JSON: {exc}. Raw content: {resp.text[:200]}") from exc
+ValueError: Failed to parse API response as JSON: Expecting value: line 1 column 1 (char 0). Raw content: Prospect Detail Report Downloaded SuccessfullySNO,"Lead ID","Created Date Time(EST)","Created Date Time(IST)","First Name","Last Name","Company Name",Domain,"Email Address","Job Title","Job Level",Web
+2026-10-16 21:14:28,712 ERROR Could not send failure alert email
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\models.py", line 1116, in json
+    return complexjson.loads(self.text, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 131, in fetch_prospect_report
+    data = resp.json()
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\.venv\Lib\site-packages\requests\models.py", line 1120, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 241, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 186, in run
+    leads = fetch_prospect_report(build_session(), start_date_str, end_date_str)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 142, in fetch_prospect_report
+    raise ValueError(f"Failed to parse API response as JSON: {exc}. Raw content: {resp.text[:200]}") from exc
+ValueError: Failed to parse API response as JSON: Expecting value: line 1 column 1 (char 0). Raw content: Prospect Detail Report Downloaded SuccessfullySNO,"Lead ID","Created Date Time(EST)","Created Date Time(IST)","First Name","Last Name","Company Name",Domain,"Email Address","Job Title","Job Level",Web
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 247, in main
+    send_mail("Haloocom Extract FAILED", f"The extraction script encountered an error:\n\n{exc}", [OWNER_EMAIL])
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 151, in send_mail
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 263, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 320, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 868, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 853, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-10-16 21:24:25,577 WARNING No state file found; first run starting from 2026-10-15
+2026-10-16 21:24:25,578 INFO Starting run. Date query range: 2026-10-14 to 2026-10-16
+2026-10-16 21:24:25,578 INFO Requesting report from https://zdpm.haloocom.in/haloocomConnect5/prospect_detail_report.php with params: {'start_date': '2026-10-14', 'end_date': '2026-10-16'}
+2026-10-16 21:24:28,676 ERROR Run failed
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 722, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 53] The network path was not found: '\\\\fileserver\\shared\\Leads'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 257, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 228, in run
+    file_path = write_excel(new_df, now_utc)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 170, in write_excel
+    SHARED_FOLDER.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 726, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 722, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 53] The network path was not found: '\\\\fileserver\\shared\\'
+2026-10-16 21:24:49,898 ERROR Could not send failure alert email
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 722, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 53] The network path was not found: '\\\\fileserver\\shared\\Leads'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 257, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 228, in run
+    file_path = write_excel(new_df, now_utc)
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 170, in write_excel
+    SHARED_FOLDER.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 726, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\pathlib\_local.py", line 722, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 53] The network path was not found: '\\\\fileserver\\shared\\'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 263, in main
+    send_mail("Haloocom Extract FAILED", f"The extraction script encountered an error:\n\n{exc}", [OWNER_EMAIL])
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 160, in send_mail
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 263, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 320, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 868, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 853, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-10-19 20:05:04,464 WARNING No state file found; first run starting from 2026-10-18
+2026-10-19 20:05:04,464 INFO Starting run. Date query range: 2026-10-17 to 2026-10-19
+2026-10-19 20:05:04,465 INFO Requesting report from https://zdpm.haloocom.in/haloocomConnect5/prospect_detail_report.php with params: {'start_date': '2026-10-17', 'end_date': '2026-10-19'}
+2026-10-19 20:05:05,727 INFO Saved 697 new leads to \\fs05\mis2\Vaibhav Dixit\Haloocom Downloads\Haloocom_Leads_20261019_143504.xlsx
+2026-10-19 20:05:27,062 ERROR File written, but notification email failed
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 237, in run
+    send_mail(
+    ~~~~~~~~~^
+        subject=f"Haloocom Leads Extract Ready - {len(new_df)} leads ({now_utc:%d-%b %H:%M UTC})",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        recipients=NOTIFY_TO,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 160, in send_mail
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 263, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 320, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 868, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 853, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-10-19 20:05:27,075 ERROR Run failed
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 237, in run
+    send_mail(
+    ~~~~~~~~~^
+        subject=f"Haloocom Leads Extract Ready - {len(new_df)} leads ({now_utc:%d-%b %H:%M UTC})",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        recipients=NOTIFY_TO,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 160, in send_mail
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 263, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 320, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 868, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 853, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 257, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 249, in run
+    raise RuntimeError(f"File saved to {file_path}, but email failed: {exc}") from exc
+RuntimeError: File saved to \\fs05\mis2\Vaibhav Dixit\Haloocom Downloads\Haloocom_Leads_20261019_143504.xlsx, but email failed: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-10-19 20:05:48,147 ERROR Could not send failure alert email
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 237, in run
+    send_mail(
+    ~~~~~~~~~^
+        subject=f"Haloocom Leads Extract Ready - {len(new_df)} leads ({now_utc:%d-%b %H:%M UTC})",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        recipients=NOTIFY_TO,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 160, in send_mail
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 263, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 320, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 868, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 853, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 257, in main
+    run()
+    ~~~^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 249, in run
+    raise RuntimeError(f"File saved to {file_path}, but email failed: {exc}") from exc
+RuntimeError: File saved to \\fs05\mis2\Vaibhav Dixit\Haloocom Downloads\Haloocom_Leads_20261019_143504.xlsx, but email failed: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 263, in main
+    send_mail("Haloocom Extract FAILED", f"The extraction script encountered an error:\n\n{exc}", [OWNER_EMAIL])
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\PycharmProjects\PythonProject\work\haloocom_v2.py", line 160, in send_mail
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 263, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\smtplib.py", line 320, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 868, in create_connection
+    raise exceptions[0]
+  File "C:\Users\vaibhav.dixit\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 853, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
